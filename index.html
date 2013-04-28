@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<section id="step1" class="focused">
+<section id="step1" >
   <!--loop intro-->
   <!--webm of these videos?-->
   <div class="background">
@@ -203,10 +203,19 @@
           <source src="media/vid/05a.mp4">
           <source src="media/vid/05a.webm">
         </video>
+        <video id="q5-yes-video-2" style="display: none;">
+          <source src="media/vid/saved.mp4">
+          <source src="media/vid/saved.webm">
+        </video>
     </div>
     <!--script to load question infographic-->
     <script>
         document.getElementById("q5-yes-video").addEventListener("ended", function() {
+            document.getElementById("q5-yes-video-2").style.display = "block";
+            document.getElementById("q5-yes-video-2").play();
+            this.style.display = "none";
+        }, false);
+        document.getElementById("q5-yes-video-2").addEventListener("ended", function() {
             $( "#step5-yes").removeClass('focused');
             $( "#step5-yes").addClass('completed');
             $( "#step6").addClass('focused');
@@ -215,17 +224,26 @@
 </section>
 
 
-<section id="step5-no">
+<section id="step5-no" class="focused">
   <!--<h2>Najah was killed.</h2>-->
     <div class="background">
         <video id="q5-no-video">
           <source src="media/vid/05b.mp4">
           <source src="media/vid/05b.webm">
         </video>
+        <video id="q5-no-video-2" style="display: none;">
+          <source src="media/vid/Killed.mp4">
+          <source src="media/vid/Killed.webm">
+        </video>
     </div>
     <!--script to load question infographic-->
     <script>
         document.getElementById("q5-no-video").addEventListener("ended", function() {
+            document.getElementById("q5-no-video-2").style.display = "block";
+            document.getElementById("q5-no-video-2").play();
+            this.style.display = "none";
+        }, false);
+        document.getElementById("q5-no-video-2").addEventListener("ended", function() {
             $( "#step5-no").removeClass('focused');
             $( "#step5-no").addClass('completed');
             $( "#step6").addClass('focused');
